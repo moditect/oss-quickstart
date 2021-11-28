@@ -1,6 +1,3 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
 /*
  *  Copyright 2021 The original authors
  *
@@ -16,17 +13,6 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package ${package};
-
-import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.*;
-
-public class AppTest {
-
-    @Test
-    public void helloShouldReturnName() {
-        App app = new App();
-        assertThat(app.hello("Bob")).isEqualTo("Hello, Bob");
-    }
+module com.example.acme {
+    exports com.example.acme;
 }
