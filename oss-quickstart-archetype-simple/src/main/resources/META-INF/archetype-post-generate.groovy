@@ -1,16 +1,15 @@
-file = new File( request.getOutputDirectory(), request.getArtifactId()+"/.gitignore.tmpl" );
-def gitIgnorefile = new File( request.getOutputDirectory(), request.getArtifactId()+"/.gitignore" );
-file.renameTo(gitIgnorefile)
+def file = new File(request.outputDirectory, request.artifactId + '/.gitignore.tmpl')
+def gitIgnoreFile = new File(request.outputDirectory, request.artifactId + '/.gitignore')
+file.renameTo(gitIgnoreFile)
 
-moduleName = request.getProperties().get("moduleName");
+def moduleName = request.properties['moduleName']
+def packagePath = request.package.replaceAll('\\.', '/')
+def moduleInfoFile = new File(request.outputDirectory, request.artifactId + '/src/main/java/' + packagePath + '/module-info.java')
 
 // module-info.java gets moved into the package of the application; move it back to src/main/java
-if (moduleName == null || moduleName.equals("NONE")) {
-    moduleInfoFile = new File( request.getOutputDirectory(), request.getArtifactId() + "/src/main/java/" + request.getPackage().replaceAll("\\.", "/") + "/module-info.java" );
-    moduleInfoFile.delete();
-}
-else {
-    moduleInfoFile = new File( request.getOutputDirectory(), request.getArtifactId() + "/src/main/java/" + request.getPackage().replaceAll("\\.", "/") + "/module-info.java" );
-    def moduleInfoFileNew = new File( request.getOutputDirectory(), request.getArtifactId()+"/src/main/java/module-info.java" );
+if (!moduleName || moduleName == 'NONE') {
+    moduleInfoFile.delete()
+} else {
+    def moduleInfoFileNew = new File(request.outputDirectory, request.artifactId + '/src/main/java/module-info.java')
     moduleInfoFile.renameTo(moduleInfoFileNew)
 }
