@@ -45,5 +45,5 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: 'Build example service'
-        run: mvn -B clean verify
+      - name: 'Build'
+        run: mvn --no-transfer-progress -B --file pom.xml verify

@@ -159,4 +159,42 @@
   <modules>
     <module>oss-quickstart-archetype-simple</module>
   </modules>
+
+  <profiles>
+    <profile>
+      <id>jreleaser</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jreleaser</groupId>
+            <artifactId>jreleaser-maven-plugin</artifactId>
+            <version>0.9.0</version>
+            <inherited>false</inherited>
+            <configuration>
+              <jreleaser>
+                <release>
+                  <github>
+                    <skipTag>true</skipTag>
+                    <changelog>
+                      <formatted>ALWAYS</formatted>
+                      <format>- {{commitShortHash}} {{commitTitle}}</format>
+                      <contributors>
+                        <format>* {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}</format>
+                      </contributors>
+                      <hide>
+                        <contributors>
+                          <contributor>GitHub</contributor>
+                          <contributor>bot</contributor>
+                        </contributors>
+                      </hide>
+                    </changelog>
+                  </github>
+                </release>
+              </jreleaser>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
