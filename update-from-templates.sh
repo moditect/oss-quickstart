@@ -24,6 +24,9 @@ mvn archetype:create-from-project -f oss-quickstart-template-simple/pom.xml
 cp -r oss-quickstart-template-simple/target/generated-sources/archetype/src/main/resources/archetype-resources oss-quickstart-archetype-simple/src/main/resources
 rm -rf oss-quickstart-archetype-simple/src/main/resources/archetype-resources/src/main/java/com
 rm -rf oss-quickstart-archetype-simple/src/main/resources/archetype-resources/src/test/java/com
+rm -rf oss-quickstart-archetype-simple/src/main/resources/archetype-resources/src/main/java/__packageInPathFormat__/
+
+# Adjusting pom.xml
 
 # The archetype creation process drops the line-wrap after the license header in the pom.xml; adding this back
 # using gsed on macOS to have flag compatibility with gnu sed on Linux
@@ -31,3 +34,9 @@ gsed -i 's/--><project/-->\n<project/g' oss-quickstart-archetype-simple/src/main
 gsed -i 's/<name>OSS.*<\/name>/<name>My OSS Project<\/name>/g' oss-quickstart-archetype-simple/src/main/resources/archetype-resources/pom.xml
 gsed -i 's/<description>.*<\/description>/<description>My Latest OSS Project<\/description>/g' oss-quickstart-archetype-simple/src/main/resources/archetype-resources/pom.xml
 gsed -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-archetype-simple/src/main/resources/archetype-resources/pom.xml
+
+gsed -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-archetype-simple/src/main/resources/archetype-resources/pom.xml
+
+# Adjusting module-info.java
+
+gsed -i 's/module \${package}/module \${moduleName}/g' oss-quickstart-archetype-simple/src/main/resources/archetype-resources/src/main/java/module-info.java

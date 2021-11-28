@@ -24,6 +24,23 @@ mvn archetype:generate \
   -DarchetypeVersion=1.0.0-SNAPSHOT
 ```
 
+Then provide values for the parameters prompted for, such as group and artifact id of the project to be generated.
+
+Alternatively, use the non-interactive ("batch") mode and provide all the values like so:
+
+```shell
+mvn archetype:generate -B \
+  -DarchetypeGroupId=org.moditect.ossquickstart \
+  -DarchetypeArtifactId=oss-quickstart-archetype-simple \
+  -DarchetypeVersion=1.0.0-SNAPSHOT \
+  -DgroupId=com.example.demos \
+  -DartifactId=fancy-project \
+  -Dversion=1.0.0-SNAPSHOT \
+  -DmoduleName=com.example.fancy
+```
+
+Use the special value `NONE` for `moduleName` if you don't want generate a _module-info.java_ file.
+
 ## Components
 
 * _oss-quickstart-archetype-simple_: A Maven archetype for creating a single module project following best practices
