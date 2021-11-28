@@ -2,7 +2,7 @@
 
 Apache Maven archetypes for bootstrapping new open-source projects.
 
-Think _maven-quickstart-archetype_ and friends, but more modern and opinionated.
+Think [Maven Quickstart Archetype](https://maven.apache.org/archetypes/maven-archetype-quickstart/) and friends, but more modern, complete, and opinionated.
 
 ## Features
 
@@ -15,6 +15,7 @@ The archetypes aim add providing commonly used functionality, while defining sen
 
 ## Components
 
+* _oss-quickstart-archetype-simple_: A Maven archetype for creating a single module project following best practices
 * _oss-quickstart-template-simple_: A template for the single module archetype
 
 ## License
