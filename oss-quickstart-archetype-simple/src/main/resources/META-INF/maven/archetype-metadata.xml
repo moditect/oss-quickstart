@@ -48,7 +48,7 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
-      <directory></directory>
+      <directory/>
       <includes>
         <include>LICENSE.txt</include>
         <include>README.md</include>
