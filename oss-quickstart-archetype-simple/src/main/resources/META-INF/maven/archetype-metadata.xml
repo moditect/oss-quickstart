@@ -3,7 +3,7 @@
     xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
-    <fileSet filtered="true" encoding="UTF-8">
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/java</directory>
       <includes>
         <include>**/*.java</include>
@@ -15,7 +15,7 @@
         <include>**/*.dontdelete</include>
       </includes>
     </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/test/java</directory>
       <includes>
         <include>**/*.java</include>
@@ -32,6 +32,12 @@
       <includes>
         <include>**/*.txt</include>
         <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>.github/workflows</directory>
+      <includes>
+        <include>**/*.yml</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
