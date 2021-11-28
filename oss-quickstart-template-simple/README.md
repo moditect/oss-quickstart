@@ -1,6 +1,6 @@
-# OSS Bootstrap Simple Template
+# My OSS Project
 
-Project template used for creating the single module OSS Bootstrap Maven Archetype.
+An open-source project bootstrapped using the [ModiTect OSS Quickstart](https://github.com/moditect/oss-quickstart) archetype.
 
 ## Build
 
