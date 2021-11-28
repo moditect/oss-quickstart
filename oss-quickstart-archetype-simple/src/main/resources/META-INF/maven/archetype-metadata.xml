@@ -44,12 +44,10 @@
       <directory></directory>
       <includes>
         <include>LICENSE.txt</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory></directory>
-      <includes>
         <include>README.md</include>
+
+        <!-- renamed to .gitignore via archetype-post-generate.groovy, due to https://issues.apache.org/jira/projects/ARCHETYPE/issues/ARCHETYPE-505 -->
+        <include>.gitignore.tmpl</include>
       </includes>
     </fileSet>
   </fileSets>
