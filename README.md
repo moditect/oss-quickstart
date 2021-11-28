@@ -12,6 +12,7 @@ The archetypes aim add providing commonly used functionality, while defining sen
 * Provide a license
 * Basic set-up for CI
 * House-keeping and quality assurance plug-ins, e.g. for formatting and license header checking
+* (Optionally) provide a _module-info.java_ descriptor
 
 ## Usage
 
