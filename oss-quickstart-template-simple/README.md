@@ -16,6 +16,12 @@ Pass the `-Dquick` option to skip all non-essential plug-ins and create the outp
 mvn clean verify -Dquick
 ```
 
+Run the following command to format the source code and organize the imports as per the project's conventions:
+
+```
+mvn process-sources
+```
+
 ## License
 
 This code base is available under the Apache License, version 2.
