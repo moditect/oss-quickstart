@@ -177,6 +177,7 @@
                     <skipTag>true</skipTag>
                     <changelog>
                       <formatted>ALWAYS</formatted>
+                      <preset>gitmoji</preset>
                       <format>- {{commitShortHash}} {{commitTitle}}</format>
                       <contributors>
                         <format>* {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}</format>
