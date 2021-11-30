@@ -124,7 +124,7 @@
           <excludes>
             <exclude>README.md</exclude>
             <exclude>LICENSE.txt</exclude>
-            <exclude>oss-quickstart-template-simple/**</exclude>
+            <exclude>oss-quickstart-simple-template/**</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -157,7 +157,7 @@
   </build>
 
   <modules>
-    <module>oss-quickstart-archetype-simple</module>
+    <module>oss-quickstart-simple-archetype</module>
   </modules>
 
   <profiles>

@@ -27,7 +27,7 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>oss-quickstart-archetype-simple</artifactId>
+  <artifactId>oss-quickstart-simple-archetype</artifactId>
   <packaging>maven-archetype</packaging>
 
   <name>OSS Quickstart Single-Module Archetype</name>

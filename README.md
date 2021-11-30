@@ -16,12 +16,12 @@ The archetypes aim add providing commonly used functionality, while defining sen
 
 ## Usage
 
-Run the following command to create a new project based on the _oss-quickstart-archetype-simple_ archetype:
+Run the following command to create a new project based on the _oss-quickstart-simple-archetype_ archetype:
 
 ```shell
 mvn archetype:generate \
   -DarchetypeGroupId=org.moditect.ossquickstart \
-  -DarchetypeArtifactId=oss-quickstart-archetype-simple \
+  -DarchetypeArtifactId=oss-quickstart-simple-archetype \
   -DarchetypeVersion=1.0.0-SNAPSHOT
 ```
 
@@ -32,7 +32,7 @@ Alternatively, use the non-interactive ("batch") mode and provide all the values
 ```shell
 mvn archetype:generate -B \
   -DarchetypeGroupId=org.moditect.ossquickstart \
-  -DarchetypeArtifactId=oss-quickstart-archetype-simple \
+  -DarchetypeArtifactId=oss-quickstart-simple-archetype \
   -DarchetypeVersion=1.0.0-SNAPSHOT \
   -DgroupId=com.example.demos \
   -DartifactId=fancy-project \
@@ -44,8 +44,8 @@ Use the special value `NONE` for `moduleName` if you don't want generate a _modu
 
 ## Components
 
-* _oss-quickstart-archetype-simple_: A Maven archetype for creating a single module project following best practices
-* _oss-quickstart-template-simple_: A template for the single module archetype
+* _oss-quickstart-simple-archetype_: A Maven archetype for creating a single module project following best practices
+* _oss-quickstart-simple-template_: A template for the single module archetype
 
 ## Building this Project
 
@@ -57,7 +57,7 @@ mvn clean install
 
 ## Updating the Archetypes
 
-Do the required changes to the template projects (currently _oss-quickstart-template-simple_ only),
+Do the required changes to the template projects (currently _oss-quickstart-simple-template_ only),
 then update the archetype by running this command:
 
 ```shell
