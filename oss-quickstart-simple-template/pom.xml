@@ -21,7 +21,7 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>org.moditect.ossquickstart</groupId>
-  <artifactId>oss-quickstart-template-simple</artifactId>
+  <artifactId>oss-quickstart-simple-template</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   
   <properties>
