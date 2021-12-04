@@ -30,11 +30,20 @@ rm -rf oss-quickstart-simple-archetype/src/main/resources/archetype-resources/sr
 
 # The archetype creation process drops the line-wrap after the license header in the pom.xml; adding this back
 # using gsed on macOS to have flag compatibility with gnu sed on Linux
-gsed -i 's/--><project/-->\n<project/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-gsed -i 's/<name>OSS.*<\/name>/<name>My OSS Project<\/name>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-gsed -i 's/<description>.*<\/description>/<description>My Latest OSS Project<\/description>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-gsed -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+
+# gsed is not available on Linux, use command sed in that case
+SED_COMMAND='gsed'
+
+if ! command -v gsed &> /dev/null
+then
+    SED_COMMAND='sed'
+fi
+
+$SED_COMMAND -i 's/--><project/-->\n<project/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/<name>OSS.*<\/name>/<name>My OSS Project<\/name>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/<description>.*<\/description>/<description>My Latest OSS Project<\/description>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
 
 # Adjusting module-info.java
 
-gsed -i 's/module \${package}/module \${moduleName}/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/src/main/java/module-info.java
+$SED_COMMAND -i 's/module \${package}/module \${moduleName}/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/src/main/java/module-info.java
