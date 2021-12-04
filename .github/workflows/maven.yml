@@ -55,4 +55,13 @@ jobs:
           distribution: 'zulu'
 
       - name: 'Build Archetype'
-        run: mvn --no-transfer-progress -B --file pom.xml verify
+        run: mvn --no-transfer-progress -B --file pom.xml install
+
+      - name: 'Set up Java 17'
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'zulu'
+
+      - name: 'Test Archetype'
+        run: mkdir test && cd test && mvn archetype:generate -B -DarchetypeGroupId=org.moditect.ossquickstart -DarchetypeArtifactId=oss-quickstart-simple-archetype -DarchetypeVersion=1.0.0.Alpha1 -DgroupId=com.example.demos -DartifactId=fancy-project -Dversion=1.0.0-SNAPSHOT -DmoduleName=com.example.fancy && cd fancy-project && ./mvnw -B verify
