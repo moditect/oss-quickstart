@@ -50,10 +50,23 @@
         <include>**/*.xml</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>.mvn/wrapper</directory>
+      <includes>
+        <include>**/*.java</include>
+        <include>**/*.properties</include>
+      </includes>
+    </fileSet>
     <fileSet encoding="UTF-8">
       <directory>.github/workflows</directory>
       <includes>
         <include>**/*.yml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>.mvn/wrapper</directory>
+      <includes>
+        <include>**/*.jar</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
@@ -67,7 +80,9 @@
       <includes>
         <!-- renamed to .gitignore via archetype-post-generate.groovy, due to https://issues.apache.org/jira/projects/ARCHETYPE/issues/ARCHETYPE-505 -->
         <include>.gitignore.tmpl</include>
+        <include>mvnw.cmd</include>
         <include>README.md</include>
+        <include>mvnw</include>
       </includes>
     </fileSet>
   </fileSets>
