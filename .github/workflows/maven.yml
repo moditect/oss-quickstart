@@ -45,5 +45,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: 'Build'
+      - name: 'Build Template'
+        run: mvn --no-transfer-progress -B --file oss-quickstart-simple-template/pom.xml verify
+
+      - name: 'Build Archetype'
         run: mvn --no-transfer-progress -B --file pom.xml verify
