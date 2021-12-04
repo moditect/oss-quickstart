@@ -28,13 +28,30 @@ rm -rf oss-quickstart-simple-archetype/src/main/resources/archetype-resources/sr
 
 # Adjusting pom.xml
 
-# The archetype creation process drops the line-wrap after the license header in the pom.xml; adding this back
+# OS specific support.  $var _must_ be set to either true or false.
+# Inspired by mvnw
+cygwin=false;
+darwin=false;
+mingw=false;
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+  MINGW*) mingw=true;;
+  Darwin*) darwin=true;;
+esac
+
 # using gsed on macOS to have flag compatibility with gnu sed on Linux
-gsed -i 's/--><project/-->\n<project/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-gsed -i 's/<name>OSS.*<\/name>/<name>My OSS Project<\/name>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-gsed -i 's/<description>.*<\/description>/<description>My Latest OSS Project<\/description>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-gsed -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+SED_COMMAND='sed'
+if $darwin ; then
+    SED_COMMAND='gsed'
+fi
+
+# The archetype creation process drops the line-wrap after the license header in the pom.xml; adding this back
+# Also replace some other values from the template with generic placeholders
+$SED_COMMAND -i 's/--><project/-->\n<project/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/<name>OSS.*<\/name>/<name>My OSS Project<\/name>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/<description>.*<\/description>/<description>My Latest OSS Project<\/description>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
 
 # Adjusting module-info.java
 
-gsed -i 's/module \${package}/module \${moduleName}/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/src/main/java/module-info.java
+$SED_COMMAND -i 's/module \${package}/module \${moduleName}/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/src/main/java/module-info.java
