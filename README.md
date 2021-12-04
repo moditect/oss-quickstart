@@ -66,6 +66,15 @@ then update the archetype by running this command:
 ./update-from-templates.sh
 ```
 
+When adding or removing any resources, also copy the generated archetype descriptor:
+
+```shell
+cp oss-quickstart-simple-template/target/generated-sources/archetype/src/main/resources/META-INF/maven/archetype-metadata.xml \ 
+  oss-quickstart-simple-archetype/src/main/resources/META-INF/maven/archetype-metadata.xml
+```
+
+**Attention:** the archetype descriptor contains additional, manually applied changes, it must not be simply overwritten with the generated one.
+
 Examine the changes to the archetype module and commit the changes.
 
 ## License

@@ -4,22 +4,32 @@ An open-source project bootstrapped using the [ModiTect OSS Quickstart](https://
 
 ## Build
 
+This project requires Java 17 or newer for building.
+It comes with the Apache https://github.com/takari/maven-wrapper[Maven wrapper],
+i.e. a Maven distribution will be downloaded automatically, if needed.
+
 Run the following command to build this project:
 
 ```
-mvn clean verify
+./mvnw clean verify
+```
+
+On Windows, run the following command:
+
+```
+mvnw.cmd clean verify
 ```
 
 Pass the `-Dquick` option to skip all non-essential plug-ins and create the output artifact as quickly as possible:
 
 ```
-mvn clean verify -Dquick
+./mvnw clean verify -Dquick
 ```
 
 Run the following command to format the source code and organize the imports as per the project's conventions:
 
 ```
-mvn process-sources
+./mvnw process-sources
 ```
 
 ## License
