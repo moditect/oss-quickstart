@@ -15,6 +15,15 @@
       <includes>
         <include>**/*.java</include>
       </includes>
+      <excludes>
+        <exclude>module-info.java</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/java</directory>
+      <includes>
+        <include>module-info.java</include>
+      </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
       <directory>src/main/resources</directory>
@@ -48,13 +57,17 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
-      <directory/>
+      <directory></directory>
       <includes>
         <include>LICENSE.txt</include>
-        <include>README.md</include>
-
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
         <!-- renamed to .gitignore via archetype-post-generate.groovy, due to https://issues.apache.org/jira/projects/ARCHETYPE/issues/ARCHETYPE-505 -->
         <include>.gitignore.tmpl</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
   </fileSets>
