@@ -80,6 +80,8 @@
       <includes>
         <!-- renamed to .gitignore via archetype-post-generate.groovy, due to https://issues.apache.org/jira/projects/ARCHETYPE/issues/ARCHETYPE-505 -->
         <include>.gitignore.tmpl</include>
+        <!-- renamed to .gitattributes via archetype-post-generate.groovy, due to https://issues.apache.org/jira/projects/ARCHETYPE/issues/ARCHETYPE-505 -->
+        <include>.gitattributes.tmpl</include>
         <include>mvnw.cmd</include>
         <include>README.md</include>
         <include>mvnw</include>
