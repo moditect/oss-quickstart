@@ -50,7 +50,7 @@ fi
 $SED_COMMAND -i 's/--><project/-->\n<project/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
 $SED_COMMAND -i 's/<name>OSS.*<\/name>/<name>My OSS Project<\/name>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
 $SED_COMMAND -i 's/<description>.*<\/description>/<description>My Latest OSS Project<\/description>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
-$SED_COMMAND -i 's/<url>https.*<\/url>/<url>tbd.<\/url>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
+$SED_COMMAND -i 's/^  <url>.*<\/url>/  <url>tbd.<\/url>/g' oss-quickstart-simple-archetype/src/main/resources/archetype-resources/pom.xml
 
 # Adjusting module-info.java
 
