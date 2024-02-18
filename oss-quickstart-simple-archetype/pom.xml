@@ -22,6 +22,7 @@
 
   <name>OSS Quickstart Single-Module Archetype</name>
   <description>A Maven Archetype for setting up a single-module project following best practices</description>
+  <url>https://github.com/moditect/oss-quickstart</url>
 
   <build>
     <extensions>
