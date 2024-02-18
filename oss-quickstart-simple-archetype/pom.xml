@@ -14,7 +14,7 @@
   <parent>
     <groupId>org.moditect.ossquickstart</groupId>
     <artifactId>ossquickstart-aggregator</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0.Beta1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
