@@ -46,7 +46,7 @@ jobs:
           java-version: 11
           distribution: 'temurin'
 
-      - name: 'Build Archetype'
+      - name: 'Build archetype'
         run: mvn --no-transfer-progress -B --file pom.xml install
 
       - name: 'Set up Java 17'
@@ -55,5 +55,8 @@ jobs:
           java-version: 17
           distribution: 'temurin'
 
-      - name: 'Test Archetype'
-        run: mkdir test && cd test && mvn archetype:generate -B -DarchetypeGroupId=org.moditect.ossquickstart -DarchetypeArtifactId=oss-quickstart-simple-archetype -DarchetypeVersion=1.0.0.Alpha1 -DgroupId=com.example.demos -DartifactId=fancy-project -Dversion=1.0.0-SNAPSHOT -DmoduleName=com.example.fancy && cd fancy-project && ./mvnw -B verify
+      - name: 'Determine archetype version'
+        run: echo "ARCHETYPE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+
+      - name: 'Test archetype'
+        run: mkdir test && cd test && mvn archetype:generate -B -DarchetypeGroupId=org.moditect.ossquickstart -DarchetypeArtifactId=oss-quickstart-simple-archetype -DarchetypeVersion=${{ env.ARCHETYPE_VERSION }} -DgroupId=com.example.demos -DartifactId=fancy-project -Dversion=1.0.0-SNAPSHOT -DmoduleName=com.example.fancy && cd fancy-project && ./mvnw -B verify
