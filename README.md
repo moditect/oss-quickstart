@@ -4,7 +4,7 @@ Apache Maven archetypes for bootstrapping new open-source projects.
 
 Think [Maven Quickstart Archetype](https://maven.apache.org/archetypes/maven-archetype-quickstart/) and friends, but more modern, complete, and opinionated.
 
-_Latest version: 1.0.0.Alpha1_
+_Latest version: 1.0.0.Beta1_
 
 ## Features
 
@@ -24,7 +24,7 @@ Run the following command to create a new project based on the _oss-quickstart-s
 mvn archetype:generate \
   -DarchetypeGroupId=org.moditect.ossquickstart \
   -DarchetypeArtifactId=oss-quickstart-simple-archetype \
-  -DarchetypeVersion=1.0.0.Alpha1
+  -DarchetypeVersion=1.0.0.Beta1
 ```
 
 Then provide values for the parameters prompted for, such as group and artifact id of the project to be generated.
@@ -35,7 +35,7 @@ Alternatively, use the non-interactive ("batch") mode and provide all the values
 mvn archetype:generate -B \
   -DarchetypeGroupId=org.moditect.ossquickstart \
   -DarchetypeArtifactId=oss-quickstart-simple-archetype \
-  -DarchetypeVersion=1.0.0.Alpha1 \
+  -DarchetypeVersion=1.0.0.Beta1 \
   -DgroupId=com.example.demos \
   -DartifactId=fancy-project \
   -Dversion=1.0.0-SNAPSHOT \
